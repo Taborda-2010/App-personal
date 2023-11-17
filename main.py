@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 st.title('Soccer Players Data Analysis')
 
 # Read CSV file
-FIFA23_Official_data = st.file_uploader('Upload a CSV file', type='csv')
-if FIFA23_Official_data is not None:
-    df = pd.read_csv(FIFA23_Official_data)
+csv_file = st.file_uploader('Upload a CSV file', type='csv')
+if csv_file is not None:
+    df = pd.read_csv(csv_file)
 
     # Show table
     st.write('Table:')
@@ -21,24 +21,24 @@ if FIFA23_Official_data is not None:
 
     # Display Nationality vs Overall Rating
     st.write('Nationality vs Overall Rating:')
-    plt.pyplot.figure(figsize=(10, 5))
+    plt.figure(figsize=(10, 5))
     df.groupby('Nationality')['Overall'].mean().plot(kind='bar')
-    plt.pyplot.xlabel('Nationality')
-    plt.pyplot.ylabel('Average Overall Rating')
-    plt.pyplot.title('Average Overall Rating by Nationality')
+    plt.xlabel('Nationality')
+    plt.ylabel('Average Overall Rating')
+    plt.title('Average Overall Rating by Nationality')
     st.pyplot(plt)
 
     # Display Heatmap of Potential vs Overall Rating
     st.write('Heatmap of Potential vs Overall Rating:')
-    plt.pyplot.figure(figsize=(10, 5))
+    plt.figure(figsize=(10, 5))
     sns.heatmap(df[['Potential', 'Overall']].corr(), annot=True, cmap='coolwarm')
     st.pyplot(plt)
 
     # Display Player Distribution by Club
     st.write('Player Distribution by Club:')
-    plt.pyplot.figure(figsize=(10, 5))
+    plt.figure(figsize=(10, 5))
     df['Club'].value_counts().plot(kind='pie', autopct='%1.1f%%')
-    plt.pyplot.title('Player Distribution by Club')
+    plt.title('Player Distribution by Club')
     st.pyplot(plt)
 
     # Display Graph of Connections between Players based on Similarity in Overall Rating
