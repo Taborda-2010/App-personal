@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-st.title('Soccer Players Data Analysis')
+st.title('Analisis de estadisticas de jugadores de FIFA 23')
 
 # Read CSV file
 #csv_file = st.file_uploader('Upload a CSV file', type='csv')
