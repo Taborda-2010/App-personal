@@ -1,3 +1,3 @@
 # App-personal
 ## Desplegable:
-#### Link: [CulinaryCraft - Streamlit.io](https://culinarycraft.streamlit.app/)
+#### Link: [FutApp - Streamlit.io](https://futapp.streamlit.app/)
