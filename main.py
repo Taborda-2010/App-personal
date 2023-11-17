@@ -32,11 +32,26 @@ plt.ylabel('Average Overall Rating')
 plt.title('Average Overall Rating by Nationality')
 st.pyplot(plt)
 
-# Display Heatmap of Potential vs Overall Rating
+
+##########################################
+
+# Calcula la correlación entre 'Potential' y 'Overall'
+correlation_matrix = df[['Potential', 'Overall']].corr()
+
+# Muestra el heatmap usando Matplotlib
 st.write('Heatmap of Potential vs Overall Rating:')
 plt.figure(figsize=(10, 5))
-sns.heatmap(df[['Potential', 'Overall']].corr(), annot=True, cmap='coolwarm')
+heatmap = plt.imshow(correlation_matrix, cmap='coolwarm', interpolation='nearest')
+plt.colorbar(heatmap)
+plt.xticks(ticks=[0, 1], labels=['Potential', 'Overall'])
+plt.yticks(ticks=[0, 1], labels=['Potential', 'Overall'])
+for i in range(len(correlation_matrix)):
+    for j in range(len(correlation_matrix)):
+        plt.text(i, j, f"{correlation_matrix.iloc[i, j]:.2f}", ha='center', va='center', color='black', fontsize=12)
 st.pyplot(plt)
+
+####################################3333
+
 
 # Display Player Distribution by Club
 st.write('Player Distribution by Club:')
