@@ -11,7 +11,7 @@ st.title('Análisis de estadísticas de jugadores de FIFA 23')
 df = pd.read_csv('FIFA23_official_data.csv')
 
 # Muestra la tabla
-st.write('Tabla:')
+st.write('Jugadores:')
 st.write(df)
 
 # Muestra la frecuencia de las nacionalidades
