@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import networkx as nx
+#import networkx as nx
 
 
 
@@ -45,12 +45,12 @@ plt.title('Player Distribution by Club')
 st.pyplot(plt)
 
 # Display Graph of Connections between Players based on Similarity in Overall Rating
-st.write('Graph of Connections between Players based on Similarity in Overall Rating:')
-G = nx.Graph()
-edges = df[['Name', 'Overall']].values.tolist()
-for edge in edges:
-    if edge[0] != edge[1]:
-        G.add_edge(edge[0], edge[1], weight=abs(edge[2] - edge[3]))
+#st.write('Graph of Connections between Players based on Similarity in Overall Rating:')
+#G = nx.Graph()
+#edges = df[['Name', 'Overall']].values.tolist()
+#for edge in edges:
+#    if edge[0] != edge[1]:
+#        G.add_edge(edge[0], edge[1], weight=abs(edge[2] - edge[3]))
 
 pos = graphviz_layout(G, prog='neato')
 nx.draw(G, pos, with_labels=True, node_size=2000, node_color='skyblue', font_size=10)
