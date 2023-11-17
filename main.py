@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 st.title('Soccer Players Data Analysis')
 
 # Read CSV file
-csv_file = st.file_uploader('Upload a CSV file', type='csv')
-if csv_file is not None:
-    df = pd.read_csv(csv_file)
+#csv_file = st.file_uploader('Upload a CSV file', type='csv')
+if FIFA23_official_data is not None:
+    df = pd.read_csv(FIFA23_official_data.csv)
 
     # Show table
     st.write('Table:')
