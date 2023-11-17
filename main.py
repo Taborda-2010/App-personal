@@ -29,10 +29,10 @@ plt.title('Average Overall Rating by Nationality')
 st.pyplot(plt)
 
 # Display Heatmap of Potential vs Overall Rating
-st.write('Heatmap of Potential vs Overall Rating:')
-plt.figure(figsize=(10, 5))
-sns.heatmap(df[['Potential', 'Overall']].corr(), annot=True, cmap='coolwarm')
-st.pyplot(plt)
+#st.write('Heatmap of Potential vs Overall Rating:')
+#plt.figure(figsize=(10, 5))
+#sns.heatmap(df[['Potential', 'Overall']].corr(), annot=True, cmap='coolwarm')
+#st.pyplot(plt)
 
 # Display Player Distribution by Club
 st.write('Player Distribution by Club:')
