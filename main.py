@@ -9,7 +9,7 @@ st.title('Analisis de estadisticas de jugadores de FIFA 23')
 # Read CSV file
 #csv_file = st.file_uploader('Upload a CSV file', type='csv')
 
-df = pd.read_csv(FIFA23_official_data.csv)
+df = pd.read_csv('FIFA23_official_data.csv')
 
 # Show table
 st.write('Table:')
